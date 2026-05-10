@@ -170,7 +170,7 @@ async def generate_allure_report(update: Update, context: ContextTypes.DEFAULT_T
 
         # Очистка временных файлов
         os.remove(zip_name)
-        await update.message.reply_text("✅ Отчет успешно отправлен!")
+        await update.message.reply_text("✅ Отчет успешно отправлен! Для нормального открытия в Pycharm введите команду в консоль allure-open и путь к папке, где лежит html файл")
 
     except Exception as e:
         await update.message.reply_text(f"⚠️ Критическая ошибка: {str(e)}")
