@@ -39,7 +39,7 @@ async def run_all_tests(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Запуск pytest
     result = await execute_command(
-        "pytest -s -v class_work_12/test --alluredir=./results",
+        "pytest -s -v main_project/ --alluredir=./results",
         update
     )
 
@@ -97,7 +97,7 @@ async def runapitest(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Запуск pytest
     result = await execute_command(
-        "pytest -s -v class_work_12/test/api/ --alluredir=./results",
+        "pytest -s -v main_project/main_api/ --alluredir=./results",
         update
     )
 
@@ -170,7 +170,7 @@ async def generate_allure_report(update: Update, context: ContextTypes.DEFAULT_T
 
         # Очистка временных файлов
         os.remove(zip_name)
-        await update.message.reply_text("✅ Отчет успешно отправлен! Для нормального открытия в Pycharm введите команду в консоль allure-open и путь к папке, где лежит html файл")
+        await update.message.reply_text("✅ Отчет успешно отправлен! Для нормального открытия в Pycharm введите команду в консоль allure open и путь к папке, где лежит html файл")
 
     except Exception as e:
         await update.message.reply_text(f"⚠️ Критическая ошибка: {str(e)}")
